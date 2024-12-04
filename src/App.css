@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+/* app.css */
+
+/* Set up styles for the cursor glow effect */
+.cursor-glow {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(59, 130, 246, 0.7); /* Light blue color */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* To prevent interfering with other elements */
+  animation: glowEffect 0.5s ease-out infinite;
+  z-index: 9999; /* Ensure it stays on top */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes glowEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  50% {
+    transform: scale(2);
+    opacity: 0.2;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
   }
 }
